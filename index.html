@@ -3173,21 +3173,22 @@
         .codex-detail {
           order: 1;
           flex: 0 0 auto;
-          flex-direction: column;
-          height: clamp(260px, 42vh, 340px);
+          flex-direction: row-reverse;
+          height: clamp(220px, 36vh, 300px);
           border-bottom: 1px solid rgba(216, 226, 227, 0.15);
         }
 
         .codex-detail-portrait {
-          width: 100%;
-          height: 190px;
+          width: 42%;
+          height: 100%;
           flex: 0 0 auto;
           object-fit: cover;
-          object-position: center 22%;
+          object-position: center 18%;
           display: block;
         }
 
         .codex-detail-content {
+          order: 2;
           padding: 10px 12px;
         }
 
