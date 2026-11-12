@@ -3174,17 +3174,18 @@
           order: 1;
           flex: 0 0 auto;
           flex-direction: column;
-          height: clamp(240px, 38vh, 320px);
+          height: auto;
+          max-height: 46vh;
           border-bottom: 1px solid rgba(216, 226, 227, 0.15);
         }
 
         .codex-detail-portrait {
           width: 100%;
-          height: auto;
-          max-height: 180px;
+          aspect-ratio: 16 / 10;
+          max-height: 200px;
           flex: 0 0 auto;
-          object-fit: contain;
-          object-position: center;
+          object-fit: cover;
+          object-position: center 20%;
           display: block;
         }
 
