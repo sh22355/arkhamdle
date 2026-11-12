@@ -3133,8 +3133,8 @@
 
         .codex-detail-bio {
           margin-bottom: 4px;
-          font-size: 0.72rem;
-          line-height: 1.3;
+          font-size: 0.68rem;
+          line-height: 1.28;
         }
 
         .codex-detail-facts {
@@ -3173,19 +3173,19 @@
         .codex-detail {
           order: 1;
           flex: 0 0 auto;
-          flex-direction: row;
-          height: clamp(200px, 32vh, 260px);
+          flex-direction: column;
+          height: clamp(240px, 38vh, 320px);
           border-bottom: 1px solid rgba(216, 226, 227, 0.15);
         }
 
         .codex-detail-portrait {
-          width: 34%;
-          height: 100%;
+          width: 100%;
+          height: auto;
+          max-height: 180px;
           flex: 0 0 auto;
           object-fit: contain;
           object-position: center;
-          padding: 4px;
-          background: rgba(0, 0, 0, 0.35);
+          display: block;
         }
 
         .codex-detail-content {
