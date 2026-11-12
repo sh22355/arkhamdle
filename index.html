@@ -3174,18 +3174,16 @@
           order: 1;
           flex: 0 0 auto;
           flex-direction: column;
-          height: auto;
-          max-height: 46vh;
+          height: clamp(260px, 42vh, 340px);
           border-bottom: 1px solid rgba(216, 226, 227, 0.15);
         }
 
         .codex-detail-portrait {
           width: 100%;
-          aspect-ratio: 16 / 10;
-          max-height: 200px;
+          height: 190px;
           flex: 0 0 auto;
           object-fit: cover;
-          object-position: center 20%;
+          object-position: center 22%;
           display: block;
         }
 
@@ -7966,7 +7964,9 @@
       const trophyPlan = playerStats.foundTrophy ? null : TROPHY_WEEKLY[getBrasiliaDate().getDay()];
 
       const isMobileViewport = window.matchMedia('(max-width: 560px)').matches;
-      const trophyViewportPos = isMobileViewport && trophyPlan.viewportMobile ? trophyPlan.viewportMobile : trophyPlan.viewport;
+      const trophyViewportPos = trophyPlan
+        ? (isMobileViewport && trophyPlan.viewportMobile ? trophyPlan.viewportMobile : trophyPlan.viewport)
+        : null;
       if (trophyPlan && trophyViewportPos) {
         riddlerTrophyBtn = createTrophyButton();
         riddlerTrophyBtn.style.cssText = `position:fixed;${trophyViewportPos};z-index:45;`;
