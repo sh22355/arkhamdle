@@ -3179,7 +3179,7 @@
         }
 
         .codex-detail-portrait {
-          width: 42%;
+          width: 46%;
           height: 100%;
           flex: 0 0 auto;
           object-fit: cover;
@@ -5169,7 +5169,17 @@
 
       function applyPortraitFocus(img, characterName) {
         const focus = portraitFocus[characterName];
-        img.style.objectPosition = focus || '';
+        if (focus) {
+          img.style.objectPosition = focus;
+          return;
+        }
+        const applyAutoFocus = () => {
+          if (!img.naturalWidth || !img.naturalHeight) return;
+          const ratio = img.naturalWidth / img.naturalHeight;
+          img.style.objectPosition = ratio > 1.2 ? 'center 15%' : 'center 25%';
+        };
+        if (img.complete && img.naturalWidth) applyAutoFocus();
+        else img.addEventListener('load', applyAutoFocus, { once: true });
       }
 
       const form = document.getElementById("guessForm");
